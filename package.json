@@ -1,0 +1,15 @@
+{
+  "name": "viva-leisure",
+  "version": "1.0.0",
+  "main": "app.ts",
+  "scripts": {
+    "dev": "tsx watch --clear-screen=false src/app.ts",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "tsx": "^4.19.1"
+  }
+}
