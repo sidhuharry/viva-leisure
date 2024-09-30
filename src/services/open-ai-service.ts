@@ -1,7 +1,17 @@
 import OpenAI from 'openai';
 import { workoutsById } from '../app';
 
-const openai = new OpenAI();
+let openai: OpenAI;
+
+try {
+  openai = new OpenAI();
+} catch (e) {
+  console.error(
+    'Unable to instantiate openai sdk. AI features will not work',
+    e
+  );
+}
+
 export const promptOpenAi = async (workoutId: string) =>
   await openai.chat.completions.create({
     model: 'gpt-4o-mini',
