@@ -38,6 +38,8 @@ export const workoutsBucketsByDuration: Record<number, Workout[]> = {};
 
 const port = process.env.PORT;
 
+console.log(`This is the port ${port}`);
+
 app.get('/v1/api/workout/:workoutId', getWorkoutById);
 
 app.get('/v1/api/list-tags', getListTags);
