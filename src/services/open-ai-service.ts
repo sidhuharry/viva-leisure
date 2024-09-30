@@ -19,7 +19,7 @@ export const promptOpenAi = async (workoutId: string) =>
   });
 
 export const prompt = (workoutId: string) => `
-    Write a short description for a workout which is represented in the following json format.
+    Write a short description for a workout which is represented in the following json object.
     json: ${JSON.stringify(workoutsById[workoutId])}
     Use all the fields except "id". Do not use openai style formatting.
     Respond without formatting. You are only allowed to use newline character.
