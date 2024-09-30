@@ -14,7 +14,7 @@ import {
   intializeInMemoryIdxForWorkoutById,
 } from './utils/util';
 
-const app = express();
+export const app = express();
 
 //dotenv config
 config();

@@ -1,5 +1,5 @@
 import { NextFunction, Request, Response } from 'express';
-import { apiKeyAuthenticator } from './authenticators/api-key-authenticator';
+import { singletons } from '../types/constants';
 
 export const authenticationMiddleware = (
   req: Request,
@@ -12,7 +12,7 @@ export const authenticationMiddleware = (
       .trim();
     console.log(`request resource = ${requestResource}`);
     if (['workout', 'list-tags', 'prompt'].indexOf(requestResource) !== -1) {
-      if (!apiKeyAuthenticator.getInstance().authenticate(req)) {
+      if (!singletons.apiKeyAuthenticator.authenticate(req)) {
         console.log('Unauthorized request.');
         res.sendStatus(401);
       }

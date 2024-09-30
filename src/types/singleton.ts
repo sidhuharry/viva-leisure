@@ -8,10 +8,7 @@ export type Instantialbe<T> = {
 
 interface ISingleton {
   <R>(Class: new () => R): Instantialbe<R>;
-  <R>(
-    Class: new (...args: unknown[]) => R,
-    ...args: unknown[]
-  ): Instantialbe<R>;
+  <R, A0>(Class: new (arg: A0) => R, arg: A0): Instantialbe<R>;
 }
 
 /**
